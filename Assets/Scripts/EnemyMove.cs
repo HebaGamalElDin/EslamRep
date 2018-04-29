@@ -28,7 +28,12 @@ public class EnemyMove : MonoBehaviour {
 	void Update () {
 
 		// AI of the Enemeis
-		nav.SetDestination(player.position);	// Making the enemies following the player
+		if (!GameManager.instance.GameOver) {
+			nav.SetDestination(player.position);	// Making the enemies following the player if we still alive
+		}else{
+			nav.enabled = false;
+		}
+
 
 
 	}

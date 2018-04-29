@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Castle.unity
     guid: 3cc3de20f84c98e47b97415a18da1a84
+  - enabled: 1
+    path: Assets/Menus.unity
+    guid: 6c6af10da9daf9341b1615b6ff670018

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Voldrmort
+  m_Controller: {fileID: 9100000, guid: 3b90380d0d855c4419489e0298ef5c6d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400004, guid: e7171c5aa6aef1f43b25576797acce30, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 0343bb8d06adc224a8eef203b447d27c, type: 3}
+  - m_OriginalClip: {fileID: 7400006, guid: e7171c5aa6aef1f43b25576797acce30, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 4220ef3e7d6032041b6c6a6b6f0b613f, type: 3}
+  - m_OriginalClip: {fileID: 7400002, guid: e7171c5aa6aef1f43b25576797acce30, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 9b306764346bcd747bbdb2eb0412f395, type: 3}
+  - m_OriginalClip: {fileID: 7400010, guid: e7171c5aa6aef1f43b25576797acce30, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: c2fe1e6e25f939a4db7d4177eead1521, type: 3}

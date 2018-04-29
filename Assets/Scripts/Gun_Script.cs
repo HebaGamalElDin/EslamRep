@@ -1,11 +1,14 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
+
 public class Gun_Script : MonoBehaviour {
 
     public float damage = 10f;
-    public float range = 20f;
+    public float range = 50f;
     public Camera fps;
+	public RaycastHit hitinfo;
+	Slider SHealth;
     [SerializeField] private Transform bulletGune;
     [SerializeField] private GameObject bulletprefap;
     //public ParticleSystem muzzleFlash;
@@ -20,7 +23,6 @@ public class Gun_Script : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Fire1"))
         {
-           
             shoot();
             fire_bullet();
         }
@@ -29,19 +31,18 @@ public class Gun_Script : MonoBehaviour {
     void shoot()
     {
        // muzzleFlash.Play();
-        RaycastHit hitinfo;
+       // RaycastHit hitinfo;
         
         if (Physics.Raycast(fps.transform.position,fps.transform.forward,out hitinfo,range))
         {
              
-            if (hitinfo.distance <= range)
-                hitinfo.transform.SendMessage("take_Damage", damage, SendMessageOptions.DontRequireReceiver);
-            Debug.Log(hitinfo.transform.name);
+			if (hitinfo.distance <= range) {
+				hitinfo.transform.SendMessage ("setAmount", damage, SendMessageOptions.DontRequireReceiver);	
+			}
+		
+			Debug.Log(hitinfo.transform.name);
             Target_Script target = hitinfo.transform.GetComponent<Target_Script>();
-            //if (target != null)
-           // {
-            //    target.take_Damage(damage);
-            //}
+           
 
         }
     }
@@ -49,8 +50,10 @@ public class Gun_Script : MonoBehaviour {
     {
         GameObject fireball = Instantiate(bulletprefap,bulletGune.position,bulletGune.rotation) as GameObject;
         // fireball.GetComponent<Rigidbody>().velocity = fireball.transform.forward * 4;
-        fireball.GetComponent<Rigidbody>().AddForce(fireball.transform.forward * 1000);
+        fireball.GetComponent<Rigidbody>().AddForce(fireball.transform.forward * 800);
+
         Destroy(fireball,3f);
+
     }
     
     
